@@ -1,0 +1,31 @@
+{
+  "name": "cynbit-backend-audit",
+  "version": "1.0.0",
+  "description": "Technical Backend Audit, Security & Performance Findings, and Hardened Architecture Reference Implementation for Cynbit Technologies",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test tests/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage tests/*.test.js",
+    "audit": "node src/scanner/cli.js",
+    "audit:passive": "node src/scanner/cli.js --target https://cynbit.in",
+    "check": "node --check src/index.js src/server.js src/config.js src/middleware/securityHeaders.js src/middleware/rateLimiter.js src/middleware/errorHandler.js src/security/tokenSigner.js src/validation/candidateValidator.js src/resilience/circuitBreaker.js src/scanner/passiveAuditScanner.js src/scanner/cli.js"
+  },
+  "keywords": [
+    "backend-audit",
+    "security-analysis",
+    "owasp",
+    "cynbit",
+    "nextjs-security",
+    "rfc7807",
+    "rate-limiting",
+    "api-hardening",
+    "architecture"
+  ],
+  "author": "Rituraj Tiwari <riturajtiwari.dev@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
