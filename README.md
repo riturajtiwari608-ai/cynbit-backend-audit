@@ -11,6 +11,7 @@
 > **Applicant / Lead:** Rituraj Tiwari  
 > **Candidate Portal ID:** `cmtykw6c0000004igfwa7a18q`  
 > **Target Role:** Backend Developer Intern  
+> **Repository:** [https://github.com/riturajtiwari608-ai/cynbit-backend-audit](https://github.com/riturajtiwari608-ai/cynbit-backend-audit)  
 > **Assessment Challenge:** *Analyze Cynbit From a Backend Perspective*  
 > **Submission Deadline:** Sun, Nov 1, 04:02 AM  
 > **Dedicated Submission Link:** [Cynbit Candidate Portal](https://www.cynbit.in/candidate/cmtykw6c0000004igfwa7a18q)  

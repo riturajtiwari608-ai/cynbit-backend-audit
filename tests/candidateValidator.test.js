@@ -5,7 +5,7 @@ import { validateCandidateSubmission } from '../src/validation/candidateValidato
 test('CandidateValidator: validates authentic submissions and halts malicious inputs', () => {
   const validPayload = {
     candidateId: 'cmtykw6c0000004igfwa7a18q',
-    repositoryUrl: 'https://github.com/riturajtiwari/cynbit-backend-audit',
+    repositoryUrl: 'https://github.com/riturajtiwari608-ai/cynbit-backend-audit',
     technicalNotes: 'Comprehensive audit report and hardened architectural reference implementation with unit tests.'
   };
 

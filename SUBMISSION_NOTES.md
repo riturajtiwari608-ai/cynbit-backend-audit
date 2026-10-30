@@ -7,7 +7,7 @@
 **Candidate Portal ID:** `cmtykw6c0000004igfwa7a18q`  
 **Target Role:** Backend Developer Intern  
 **Assessment Task:** Analyze Cynbit From a Backend Perspective  
-**Repository URL:** `https://github.com/riturajtiwari/cynbit-backend-audit`  
+**Repository URL:** `https://github.com/riturajtiwari608-ai/cynbit-backend-audit`  
 **Submission Portal:** [https://www.cynbit.in/candidate/cmtykw6c0000004igfwa7a18q](https://www.cynbit.in/candidate/cmtykw6c0000004igfwa7a18q)  
 
 ---
@@ -49,7 +49,7 @@ Rather than delivering solely static recommendations, I built and verified an en
 
 ### 🚀 Setup & Verification
 ```bash
-git clone https://github.com/riturajtiwari/cynbit-backend-audit.git
+git clone https://github.com/riturajtiwari608-ai/cynbit-backend-audit.git
 cd cynbit-backend-audit
 npm test          # Run automated test suite (100% pass)
 npm run audit     # Run passive security inspector CLI (100/100 score)
