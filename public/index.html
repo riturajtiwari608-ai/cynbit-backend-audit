@@ -340,11 +340,11 @@
 
     <!-- Navigation Tabs -->
     <div class="tab-nav">
-      <button class="tab-btn active" onclick="openTab('testbench')">🧪 Interactive API Test Bench</button>
-      <button class="tab-btn" onclick="openTab('findings')">🔍 Security & Performance Findings</button>
-      <button class="tab-btn" onclick="openTab('improvements')">🛠️ Recommended Improvements</button>
-      <button class="tab-btn" onclick="openTab('signer')">🔐 HMAC URL Signer</button>
-      <button class="tab-btn" onclick="openTab('audit')">📑 Technical Audit Overview</button>
+      <button class="tab-btn active" data-tab="testbench">🧪 Interactive API Test Bench</button>
+      <button class="tab-btn" data-tab="findings">🔍 Security & Performance Findings</button>
+      <button class="tab-btn" data-tab="improvements">🛠️ Recommended Improvements</button>
+      <button class="tab-btn" data-tab="signer">🔐 HMAC URL Signer</button>
+      <button class="tab-btn" data-tab="audit">📑 Technical Audit Overview</button>
     </div>
 
     <!-- Tab 1: Interactive Test Bench -->
@@ -371,9 +371,9 @@
             </div>
 
             <div class="btn-group">
-              <button class="btn btn-primary" onclick="submitTest()">🚀 Submit Payload</button>
-              <button class="btn btn-secondary" onclick="presetRateLimit()">⚡ Burst Test (5x Rate Limit)</button>
-              <button class="btn btn-danger" onclick="presetSSRF()">🛑 Test SSRF Injection</button>
+              <button class="btn btn-primary" id="btn-submit-test">🚀 Submit Payload</button>
+              <button class="btn btn-secondary" id="btn-preset-ratelimit">⚡ Burst Test (5x Rate Limit)</button>
+              <button class="btn btn-danger" id="btn-preset-ssrf">🛑 Test SSRF Injection</button>
             </div>
           </div>
 
@@ -490,7 +490,7 @@
             <label>Link Validity (Hours):</label>
             <input type="number" id="signer-ttl" value="72" min="1" max="720">
           </div>
-          <button class="btn btn-primary" onclick="generateSignedLink()">Generate Tamper-Proof Link</button>
+          <button class="btn btn-primary" id="btn-generate-link">Generate Tamper-Proof Link</button>
           <div style="margin-top: 16px;">
             <label style="font-size: 0.85rem; color: var(--text-muted);">Generated URL:</label>
             <pre id="signer-output">// Generated signed capability URL will appear here...</pre>
@@ -521,13 +521,28 @@
   </div>
 
   <script>
-    function openTab(tabId) {
+    function openTab(tabId, targetBtn) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
       
-      document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+      const targetPanel = document.getElementById(tabId);
+      if (targetPanel) targetPanel.classList.add('active');
+      if (targetBtn) targetBtn.classList.add('active');
     }
+
+    // Attach Tab Event Listeners
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const tabId = btn.getAttribute('data-tab');
+        if (tabId) openTab(tabId, btn);
+      });
+    });
+
+    // Attach Action Buttons
+    document.getElementById('btn-submit-test')?.addEventListener('click', submitTest);
+    document.getElementById('btn-preset-ratelimit')?.addEventListener('click', presetRateLimit);
+    document.getElementById('btn-preset-ssrf')?.addEventListener('click', presetSSRF);
+    document.getElementById('btn-generate-link')?.addEventListener('click', generateSignedLink);
 
     async function submitTest() {
       const output = document.getElementById('tb-output');

@@ -2,6 +2,7 @@
 ### Practical Technical Assessment for Backend Developer Intern Role
 
 [![Node.js](https://img.shields.io/badge/Node.js-20+-339933.svg?logo=node.js)](https://nodejs.org/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7.svg?logo=render)](https://cynbit-backend-audit.onrender.com)
 [![Tests Passing](https://img.shields.io/badge/Tests-7%2F7%20Passed-brightgreen.svg)]()
 [![Security Score](https://img.shields.io/badge/Security%20Score-100%2F100-success.svg)]()
 [![Error Standard](https://img.shields.io/badge/Standard-RFC%207807-blueviolet.svg)](https://datatracker.ietf.org/doc/html/rfc7807)
@@ -12,6 +13,7 @@
 > **Candidate Portal ID:** `cmtykw6c0000004igfwa7a18q`  
 > **Target Role:** Backend Developer Intern  
 > **Repository:** [https://github.com/riturajtiwari608-ai/cynbit-backend-audit](https://github.com/riturajtiwari608-ai/cynbit-backend-audit)  
+> **Live Interactive Demo:** [https://cynbit-backend-audit.onrender.com](https://cynbit-backend-audit.onrender.com)  
 > **Assessment Challenge:** *Analyze Cynbit From a Backend Perspective*  
 > **Submission Deadline:** Sun, Nov 1, 04:02 AM  
 > **Dedicated Submission Link:** [Cynbit Candidate Portal](https://www.cynbit.in/candidate/cmtykw6c0000004igfwa7a18q)  

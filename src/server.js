@@ -64,9 +64,16 @@ export function createServer() {
     const method = req.method || 'GET';
 
     // 1. Enforce Zero-Trust Defense-in-Depth Security Headers
-    applySecurityHeaders(req, res);
+    const nonce = applySecurityHeaders(req, res);
 
     try {
+      // Favicon handler (suppress 404 in browser console)
+      if (pathname === '/favicon.ico') {
+        res.statusCode = 204;
+        res.end();
+        return;
+      }
+
       // 2. Health & Telemetry Endpoint
       if (method === 'GET' && pathname === '/api/health') {
         res.setHeader('Content-Type', 'application/json');
@@ -80,12 +87,14 @@ export function createServer() {
         return;
       }
 
-      // 3. Serve Interactive Web Dashboard (GET /)
+      // 3. Serve Interactive Web Dashboard with Dynamic Nonce Injection (GET /)
       if (method === 'GET' && (pathname === '/' || pathname === '/index.html')) {
         const indexPath = path.join(PUBLIC_DIR, 'index.html');
         if (fs.existsSync(indexPath)) {
+          const rawHtml = fs.readFileSync(indexPath, 'utf-8');
+          const noncedHtml = rawHtml.replace('<script>', `<script nonce="${nonce}">`);
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
-          fs.createReadStream(indexPath).pipe(res);
+          res.end(noncedHtml);
           return;
         }
       }
